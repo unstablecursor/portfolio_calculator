@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Portfolio Calculator</title>
+        <style>
+        body {
+            font-family: Arial;
+            color: #555;
+            font-size: 16px;
+            margin: 2em auto;
+            max-width: 800px;
+            padding: 1em;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        h1 {
+            color: #444;
+            text-align: center; 
+        }
+
+        form {
+            font-family: verdana;
+            font-size: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Enter below.</h1>
+        <script src="{{ static_url('scripts/addInput.js')}}" type="text/javascript"></script>
+        <form method="post" action="/result">
+            <div id="dynamicInput">
+                Name 1<br><input type="text" name="name[]"><br>
+                Type 1<br><input type="checkbox" name="type[]" value="BUY">BUY<input type="checkbox" name="type[]" value="SELL">SELL<br>
+                Number 1<br><input type="text" name="number[]"><br>
+                Date 1<br><input type="text" name="date[]"><br>
+            </div>
+            <input type="button" value="Add another text input" onClick="addInput('dynamicInput');">
+        <input type="submit">
+        </form>
+    </body>
+</html>
